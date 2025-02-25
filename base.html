@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .background-image {
+            background-image: url('{{ background_image }}');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="relative flex items-center min-h-screen text-white">
+    <div class="background-image"></div>
+    <div class="gradient-overlay"></div>
+    <div class="absolute top-0 left-0 p-5">
+        <img src="{{ logo }}" alt="Logo" class="w-32">
+    </div>
+    <div class="flex items-center max-w-7xl mx-auto p-10 space-x-24">
+        <img src="{{ image }}" alt="Error Image" class="w-3/5 rounded-lg shadow-lg">
+        <div class="text-left max-w-lg">
+            <h1 class="text-6xl font-bold">{{ title }}</h1>
+            <p class="text-2xl mt-4">{{ quote }}</p>
+            <p class="text-lg text-gray-300 mt-6">{{ description }}</p>
+            <!-- <a href="javascript:history.back()" class="inline-block mt-8 px-6 py-3 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-colors">{{ back_button_text }}</a>
+            <a href="{{ movie_url }}" class="inline-block ml-4 mt-8 px-6 py-3 bg-zinc-800 text-white rounded-lg shadow-lg hover:bg-zinc-900 transition-colors" target="_blank">{{ movie_title }}</a>
+            <a href="{{ movie_url }}"
+                class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+                target="_blank">
+                <span class="inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </span>
+                {{ movie_title }}
+            </a>
+            <a href="javascript:history.back()"
+                class="inline-block px-6 py-3 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-colors">
+                <span class="inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Retour
+                </span>
+            </a>
+            <a href="{{ movie_url }}"
+                class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+                target="_blank">
+                <span class="inline-flex items-center">
+                    {{ movie_title }}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </span>
+            </a> -->
+            <p class="mt-8">
+                <button type="button"
+                    class="text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg fill="#fff" width="1rem" height="1rem" viewBox="-8.5 0 32 32" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.094 15.938l7.688 7.688-3.719 3.563-11.063-11.063 11.313-11.344 3.531 3.5z"></path>
+                    </svg>
+                    Back
+                </button>
+                <button type="button"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg fill="#fff" width="1rem" height="1rem" viewBox="-7 0 32 32" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 6.688v18.906c0 0.344 0.156 0.625 0.469 0.813 0.125 0.094 0.344 0.125 0.5 0.125s0.281-0.031 0.438-0.125l16.375-9.438c0.313-0.219 0.5-0.5 0.5-0.844 0-0.313-0.188-0.594-0.5-0.813l-16.375-9.438c-0.563-0.406-1.406 0.094-1.406 0.813z">
+                        </path>
+                    </svg>
+                    {{ movie_title }}
+                </button>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

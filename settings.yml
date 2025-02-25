@@ -1,0 +1,11 @@
+logo: https://example.com/logo.svg
+back_button_text: Back
+errors:
+  404:
+  - title: Erreur 404 Not Found
+    quote: a funy quote
+    description: a funny description
+    background_image: https://example.com/errors/404/background.jpg
+    image: https://example.com/errors/404/image.jpg
+    image_alt: If image is unloadable or for audio description
+    movie_title: Obvously the movie title
